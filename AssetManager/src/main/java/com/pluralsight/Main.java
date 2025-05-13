@@ -8,8 +8,6 @@ public class Main {
 
         House h1 = new House("My main house", "2020-05-05", 200000, "123 Sesame", 2, 1500, 6000);
 
-
-
         portfolio.add(new Asset("Hundred Dollar Bill", "2025-01-01", 100));
         portfolio.add(new Asset("Necklace", "2025-02-14", 225));
         portfolio.add(h1);

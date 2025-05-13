@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-public class House extends Asset{
+public class House extends Asset {
 
     private String address;
     private int condition;  // (1 -excellent, 2 -good, 3 -fair, 4 -poor)
@@ -45,6 +45,28 @@ public class House extends Asset{
 
     public void setLotSize(int lotSize) {
         this.lotSize = lotSize;
+    }
+
+    //give you a compile error is asset didn't have getValue()
+    @Override
+    public double getValue() {
+        double result;
+
+        double pricePerSquareFoot = 0;
+        switch (this.condition) { // (1 -excellent, 2 -good, 3 -fair, 4 -poor)
+            case 1: pricePerSquareFoot = 180;
+                break;
+            case 2: pricePerSquareFoot = 130;
+                break;
+            case 3: pricePerSquareFoot = 90;
+                break;
+            case 4: pricePerSquareFoot = 80;
+                break;
+        }
+
+        result = (this.squareFoot * pricePerSquareFoot) + (this.lotSize * 0.25);
+
+        return result;
     }
 
     //    public House(String description, String dateAcquired, double originalCost){
