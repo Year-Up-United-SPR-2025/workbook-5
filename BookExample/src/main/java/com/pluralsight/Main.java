@@ -6,9 +6,14 @@ public class Main {
 
         Dog d = new Dog();
         d.setBreed("poodle");
-        d.setName("rover");
+        d.setName("rover"); //inherits from Animal(parent)
 
         d.bark();
+
+        System.out.println(d);
+
+        Animal a = new Animal();
+        a.digest();
 
     }
 }
